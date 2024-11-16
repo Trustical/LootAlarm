@@ -1,0 +1,12 @@
+# Classic Era, Classic, Retail
+## Interface: 11504, 40400, 110005
+## Title: LootAlarm
+## Author: LootAlarm
+## Notes: Get notifications about looted items.
+## Version: 1.0.1
+## SavedVariables: LootAlarmGlobalDB
+## SavedVariablesPerCharacter: LootAlarmLocalDB
+## IconTexture: Interface\AddOns\LootAlarm\Assets\Images\Logo
+
+Core.lua
+Index.xml
