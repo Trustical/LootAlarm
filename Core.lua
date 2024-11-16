@@ -113,6 +113,8 @@ Addon.Events2:RegisterEvent("EQUIP_BIND_CONFIRM")
 function Addon.Events1:ADDON_LOADED(WhichAddonName)
     if (WhichAddonName ~= AddonName) then return end
 
+    -- Bli
+
     Addon.Initialize:Init()
     Addon.Events1:UnregisterEvent("ADDON_LOADED")
 end
