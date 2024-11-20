@@ -1,5 +1,5 @@
 # Classic Era, Classic, Retail
-## Interface: 11504, 40400, 110005
+## Interface: 11505, 40400, 110005
 ## Title: LootAlarm
 ## Author: LootAlarm
 ## Notes: Get notifications about looted items.
