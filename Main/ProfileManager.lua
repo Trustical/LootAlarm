@@ -17,7 +17,24 @@ function ProfileManager:HasItemsInProfile()
 end
 
 function ProfileManager:GeProfileItems()
-    return Functions:Condition(ProfileManager:IsProfileLoaded(), LootAlarmLocalDB.Profiles[LootAlarmLocalDB.Settings.LoadedProfile].Items, {})
+    if (not ProfileManager:IsProfileLoaded()) then return {} end
+    return LootAlarmLocalDB.Profiles[LootAlarmLocalDB.Settings.LoadedProfile].Items
+end
+
+function ProfileManager:GetProfileItem(ItemNameOrID)
+    local ItemID = tonumber(ItemNameOrID)
+
+    for _, Item in next, ProfileManager:GeProfileItems(), nil do
+        if (ItemID) then
+            if (Item.ID == tonumber(ItemID)) then
+                return Item
+            end
+        elseif (Item.Name == ItemNameOrID) then
+            return Item
+        end
+    end
+
+    return nil
 end
 
 function ProfileManager:ProfileExists(ProfileName)

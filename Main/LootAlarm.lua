@@ -14,9 +14,19 @@ local Colors = Addon.Colors
 -- LOOT
 --------------------------------------------
 
+local TimeLastLootAlarm = time()
+
 function Events1:LOOT_READY()
     if (not LootAlarmLocalDB.Settings.IsAddonEnabled) then return end
     if (not ProfileManager:HasItemsInProfile()) then return end
+
+    if (not LootAlarmLocalDB.Settings.FastLoot) then
+        if (time() <= TimeLastLootAlarm + 0.5) then
+            return
+        else
+            TimeLastLootAlarm = time()
+        end
+    end
 
     local UnitName = UnitName("Target")
     UnitName = Functions:Condition(UnitName, UnitName, "")
@@ -139,7 +149,11 @@ function Main:DisplayLootInChat(LootAlarms)
     print(Functions:PrintColor("—————————— "..Core.AddonName.." ——————————", "Whisper"))
 
     for LootSlot, Item in next, LootAlarms, nil do
-        Functions:PrintAddon(Functions:PrintIcon(Item.Icon).." "..Item.DisplayName.." from \""..Item.UnitName.."\".")
+        Functions:PrintAddon(table.concat{
+            Functions:PrintIcon(Item.Icon),
+            " "..Item.DisplayName,
+            Functions:Condition(strlen(Item.UnitName) > 0, " from \""..Item.UnitName.."\"", "")..".",
+        })
 	end
 
     print(Functions:PrintColor("——————————————————————————", "Whisper"))

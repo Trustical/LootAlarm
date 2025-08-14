@@ -24,6 +24,12 @@ Easily create individual lists of items that you want to be notified about as so
 - Right-click on a profile to show profile options.
 - Right-click on the minimap-icon to disable the addon.
 
+# API
+
+- LootAlarm:IsInitialized() - To check if available and ready to call.
+- LootAlarm:HasItemInActiveProfile(ItemNameOrID) - To check if an item exists in the currently loaded profile.
+- LootAlarm:GetActiveProfileName() - To get the profile name of the currently loaded profile.
+
 # Misc.
 
 - All features/options can be enabled/disabled via the settings icon in your Profile Manager.
