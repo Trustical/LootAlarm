@@ -1,9 +1,9 @@
 # Classic Era, Classic, Retail
-## Interface: 11507, 50500, 110200
+## Interface: 11507, 50501, 110200
 ## Title: LootAlarm
 ## Author: LootAlarm
 ## Notes: Get notifications about looted items.
-## Version: 1.0.15
+## Version: 1.0.16
 ## SavedVariables: LootAlarmGlobalDB
 ## SavedVariablesPerCharacter: LootAlarmLocalDB
 ## IconTexture: Interface\AddOns\LootAlarm\Assets\Images\Logo
